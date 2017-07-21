@@ -8,10 +8,9 @@ void setup()
 
   Serial.begin(9600);      // sets the serial port to 9600
 
-  pinMode( 0, INPUT);
+  pinMode( 0, INPUT);      // Analog pin A0 is set for input mode
 
 }
-
 
 
 
@@ -20,9 +19,9 @@ void loop()
 {
   if(Serial.available())
   {
-  sensorValue = analogRead(0);       // read analog input pin 0
+  sensorValue = analogRead(0);       // read analog input A0
 
-  digitalValue = digitalRead(0); 
+  digitalValue = digitalRead(0);     // read digital input from D0
 
   Serial.println(sensorValue, DEC);  // prints the value read
 
