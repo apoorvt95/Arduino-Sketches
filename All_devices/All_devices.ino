@@ -1,3 +1,10 @@
+// Sketch made by Apoorv Tomar
+// Sketch for interfacing Bluetooth module HC-05, AirQuality sensor MQ 135, GSM Module SIM800 with Arduino UNO, MEGA.
+// Uses pin 10,11 as Software Serial (RX, TX) to connect to HC-05 
+// Uses Hardware Serial Pin RX1, TX1 to connect to SIM 800
+// MQ 135 is connected with D0, A0 (which serve as input pins for Arduino).
+// Data collected from Sensors and Bluetooth device is sent to SIM800 via Serial Communication.
+
 #include<SoftwareSerial.h>
 SoftwareSerial BTSerial(10, 11);
 
@@ -43,6 +50,7 @@ void loop() {
   }
   
     Serial1.print(sendData + "v=" + sensorValue + "&session=" + sensorValue + "\"\r\n");
+    // You can give your own commands to push data to remote server via GET OR POST HTTP requests.
     //if(Serial1.available())
     //Serial.print(Serial1.read());
     //Serial1.print("at+httpaction=0\r\n");
