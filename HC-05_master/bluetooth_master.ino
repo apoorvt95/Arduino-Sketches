@@ -1,12 +1,12 @@
+//  Made By Apoorv Tomar 
 //  HC-05 universal test sketch to enter AT-commands
 //  Uses hardware serial to talk to the host computer and software serial for communication with the bluetooth module
 //
 //  Pins
 //  BT VCC to Arduino 5V out.
 //  BT GND to GND
-//  Arduino D11 to BT RX
-//  Arduino D10 BT TX
-//  Key Pin D9
+//  Arduino D11 to Bluetooth RX
+//  Arduino D10 Bluetooth TX
 //
 //  When a command is entered in the serial monitor on the computer
 //  the Arduino will relay it to the bluetooth module and display the result.
@@ -15,11 +15,6 @@
 
 #include<SoftwareSerial.h>
 SoftwareSerial BTSerial(10, 11);     //Using D10(RX) and D11(TX) as Software Serial ports
-
-const int keyPin = 9;
-
-String HC05_Responce = "";
-
 void setup() {
 
   //output from keypin
