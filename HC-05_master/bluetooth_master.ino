@@ -1,5 +1,3 @@
-//  by Brandon Plumbo AKA Riftliger
-//  original version from Techbitar http://www.instructables.com/id/Modify-The-HC-05-Bluetooth-Module-Defaults-Using-A/step1/Components-Wiring/, and Phillipe Cantin http://phillipecantin.blogspot.com/2014/08/hc-05-bluetooth-link-with-zero-code.html
 //  HC-05 universal test sketch to enter AT-commands
 //  Uses hardware serial to talk to the host computer and software serial for communication with the bluetooth module
 //
@@ -13,10 +11,10 @@
 //  When a command is entered in the serial monitor on the computer
 //  the Arduino will relay it to the bluetooth module and display the result.
 //
-//  The HC-05 modules require both CR and NL
+//  The HC-05 modules require both CarriageReturn and Newline (CR & NL)
 
 #include<SoftwareSerial.h>
-SoftwareSerial BTSerial(10, 11);
+SoftwareSerial BTSerial(10, 11);     //Using D10(RX) and D11(TX) as Software Serial ports
 
 const int keyPin = 9;
 
@@ -27,16 +25,16 @@ void setup() {
   //output from keypin
   pinMode(keyPin, OUTPUT);
   digitalWrite(keyPin, HIGH);
+  //Start Serial Monitor at 9600 baud rate
 
   Serial.begin(9600);
-  Serial.println("Sketch HC-05");
-  Serial.println("Arduino with HC-05 is ready");
-  Serial.println("Make sure Both NL & CR are set");
+  Serial.println("HC-05 is good to go");
+  Serial.println("Make sure Both NL & CR are set in the serial monitor");
   Serial.println("");
 
   //Set to HC-05 default baud rate, found using AT+UART.  It is usually 38400.
   BTSerial.begin(38400);
-  Serial.println("BTserial started at 38400");
+  Serial.println("Bluetooh Serial started at 38400");
   Serial.println("");
 
 }
