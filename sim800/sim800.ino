@@ -1,3 +1,10 @@
+// Made By Apoorv Tomar
+// Connect SIM800 RX - TX1 Pin and TX - RX1 Pin
+// GND - GND Arduino Board
+// Use 12V power supply adapter and connect to the jack
+// When Serial communication is established
+// Use AT commands to configure SIM800
+// View the README file for resources on AT commands.
 
 void setup() {
   //Begin serial comunication with Arduino and Arduino IDE (Serial Monitor)
