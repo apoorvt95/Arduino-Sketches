@@ -13,6 +13,7 @@ This repositories maintains arduino sketches to communicate between Arduino to v
 * GSM Module SIM800 
 * Air Quality Sensor MQ-135
 * Accelerometer/Gyroscope sensor ADXL 345
+* Zigbee (Xbee Modules) Receiver and Transmitter 
 
 ### Resources
 
